@@ -3,7 +3,7 @@ export default {
   displayName: 'ng-flexbot',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/ng-flexbot',
+  coverageDirectory: '../../coverage/libs/ng-flexbot',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
