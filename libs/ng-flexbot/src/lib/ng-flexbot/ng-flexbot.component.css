@@ -3,7 +3,6 @@
     padding: 0;
     width: 100%;
     height: 100vh;
-    background-color: #131314;
   }
   *{
     padding: 0;
@@ -12,9 +11,7 @@
     box-sizing: border-box;
     
   }
-body{
-  background-color: #131314;
-}
+
   .messagebar {
     position: fixed;
     bottom: 0;
@@ -23,25 +20,24 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #131314;
     flex-direction: column;
   }
-  .messagebar p {
+  /* .messagebar p {
     color: white;
-  }
+  } */
   
   .bar-wrapper {
     margin-bottom: 50px;
   }
   
   .messagebar .bar-wrapper {
-    background-color: #292a31;
     border-radius: 30px;
     width: 50vw;
     padding: 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   .bar-wrapper textarea {
@@ -52,11 +48,11 @@ body{
     outline: none;
     font-size: 14px;
     background: none;
-    color: #ccc;
     min-height: 30px;
     resize: vertical;
     height: 30px;
     max-height: 400px;
+    
   }
   
   .bar-wrapper input::placeholder {
@@ -70,7 +66,6 @@ body{
     justify-content: center;
     background: none;
     border: none;
-    color: #fff;
     cursor: pointer;
   }
   
@@ -113,8 +108,6 @@ body{
     top: 0;
     width: 100%;
     height: 100px;
-    background-color: #131314;
-    color: white;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -197,7 +190,6 @@ body{
     display: block;
     margin: 15px auto;
     position: relative;
-    color: #fff;
     box-sizing: border-box;
     animation: animloader 1s linear infinite alternate;
   }

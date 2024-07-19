@@ -8,11 +8,14 @@
 </div>
 }
 @case (messageType.USER_MESSAGE) {
-<div class="chat message">
+<div class="user-bulbe">
     <img src="../../../assets/img/aguekeng.png" width="30px">
-    <p>
-        {{ message().message }}
-    </p>
+    <div class="chat message">
+        
+        <p>
+            {{ message().message }}
+        </p>
+    </div>
 </div>
 }
 @case (messageType.ERROR_MESSAGE) {

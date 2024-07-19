@@ -26,19 +26,35 @@
 /* Bot Message Styles */
 .chat.response {
   align-self: flex-start;
-  background-color: #1e1e1ea3; /* Dark background */
   color: #ffffff; /* White text */
-  width: 100%;
-  border-radius: 15px;
+  width: auto; /* Adjust width to fit content */
+  max-width: 80%; /* Maximum width */
+  padding: 10px 15px; /* Padding around text */
+  margin: 5px; /* Space between messages */
+  border-radius: 20px; /* Rounded corners */
+  background-color: #007bff; /* Blue background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
-
+.user-bulbe{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
 /* User Message Styles */
 .chat.message {
   display: flex;
-  color: #ffffff; /* White text */
-  width: 100%;
   flex-direction: row;
-  gap: 8px;
+  align-items: center; /* Align items vertically */
+  color: #ffffff; /* White text */
+  width: auto; /* Adjust width to fit content */
+  max-width: 80%; /* Maximum width */
+  padding: 10px 15px; /* Padding around text */
+  margin: 5px; /* Space between messages */
+  border-radius: 20px; /* Rounded corners */
+  background-color: #28a745; /* Green background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  gap: 8px; /* Gap between elements inside the bubble */
 }
 
 .chat.message img {
