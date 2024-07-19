@@ -1,4 +1,5 @@
 /* General Chat Block Styles */
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 .chat {
   display: flex;
   flex-direction: column;
@@ -63,7 +64,7 @@
 
   /* text writing animation */
 /* Google Fonts */
-@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
 
 /* Global */
 .line-1{

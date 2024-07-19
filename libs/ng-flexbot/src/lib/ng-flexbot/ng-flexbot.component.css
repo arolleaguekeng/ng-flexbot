@@ -5,7 +5,16 @@
     height: 100vh;
     background-color: #131314;
   }
-  
+  *{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    
+  }
+body{
+  background-color: #131314;
+}
   .messagebar {
     position: fixed;
     bottom: 0;
@@ -16,7 +25,6 @@
     justify-content: center;
     background-color: #131314;
     flex-direction: column;
-    
   }
   .messagebar p {
     color: white;
