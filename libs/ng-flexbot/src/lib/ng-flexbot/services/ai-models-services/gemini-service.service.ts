@@ -7,9 +7,7 @@ import { FbSharedServiceService } from '../fb-shared-service.service';
   providedIn: 'root',
 })
 export class GeminiServiceService {
-  constructor(
-    private fileConversionService: FileConversionService
-  ) {}
+  constructor(private fileConversionService: FileConversionService) {}
 
   fbSharedService = inject(FbSharedServiceService);
 
@@ -20,6 +18,11 @@ export class GeminiServiceService {
   imageModel = this.genAI.getGenerativeModel({
     model: this.fbSharedService.flexbotCurrentImageModel,
   });
+  /**
+   * Generates text based on the given prompt.
+   * @param prompt - The prompt for generating text.
+   * @returns A Promise that resolves to the generated text.
+   */
   generateText(prompt: string): Promise<any> {
     const test: {
       role: string;
@@ -54,6 +57,12 @@ export class GeminiServiceService {
     return chat.sendMessage(prompt);
   }
 
+  /**
+   * Generates text based on an image and a prompt.
+   * @param file - The image file to generate text from.
+   * @param promptText - The prompt text to use for generating the content.
+   * @returns A Promise that resolves to the generated text.
+   */
   async generateTextByImage(file: File, promptText: string): Promise<any> {
     try {
       const imageBase64 = await this.fileConversionService.convertToBase64(

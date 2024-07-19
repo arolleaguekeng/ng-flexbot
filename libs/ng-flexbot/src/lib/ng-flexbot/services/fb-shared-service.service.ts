@@ -4,6 +4,9 @@ import { FlexbotCurrentTextModel, FlexbotCurrentImageModel } from '../models/fle
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * Service for managing shared data and functionality related to Flexbot.
+ */
 export class FbSharedServiceService {
 
   isStreaming = false;

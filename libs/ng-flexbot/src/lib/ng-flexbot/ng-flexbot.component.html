@@ -1,59 +1,56 @@
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
 
 <form action="">
-  <div class="body">
-    <nav>
-      <img src="../assets/img/angular-gemini.png" alt="" />
-      <h1>Angular Gemini</h1>
-    </nav>
-    <div class="chatbox-wrapper">
-      <div class="message-box">
-        @if (chatMessages.length > 0) {
-        @for (message of chatMessages; track $index) {
-        <lib-app-chat-message [message]="message"></lib-app-chat-message>
-        }
-        }
-        @else {
-        <h1 class="welcome-text">
-          Angular Gemini UI <br> DEMO
-        </h1>
-        }
+    <div class="body">
+        <nav>
+            <img src="../assets/img/angular-gemini.png" alt="" />
+            <h1>Angular Gemini</h1>
+        </nav>
+        <div class="chatbox-wrapper">
+            <div class="message-box">
+                @if (chatMessages.length > 0) {
+                    @for (message of chatMessages; track $index) {
+                    <lib-app-chat-message [message]="message"></lib-app-chat-message>
+                    }
+                }
+                @else {
+                    <h1 class="welcome-text">
+                        Angular Gemini UI <br> DEMO
+                    </h1>
+                }
 
-      </div>
-      <style>
-        input[type="file"] {
-          display: none;
-        }
-      </style>
-      <div class="messagebar">
-        <div class="bar-wrapper">
-          <input type="file" id="image" (change)="onImageSelected($event)" style="cursor: pointer;">
-          @if (imageUrl) {
-          <div class="image-container">
-            <img [src]="imageUrl" alt="Uploaded Image" width="80px">
-            <button class="remove-button material-symbols-rounded" (click)="removeImage()">cancel</button>
-          </div>
+            </div>
+            <style>
+                input[type="file"] {
+                    display: none;
+                }
+            </style>
+            <div class="messagebar">
+                <div class="bar-wrapper">
+                    <input type="file" id="image" (change)="onImageSelected($event)" style="cursor: pointer;">
+                    @if (imageUrl) {
+                        <div class="image-container">
+                            <img [src]="imageUrl" alt="Uploaded Image" width="80px">
+                            <button class="remove-button material-symbols-rounded" (click)="removeImage()">cancel</button>
+                        </div>
 
-          }
-          <textarea placeholder="Enter your message..." id="autoResizeTextarea" [(ngModel)]="currentChatItem.message"
-            [ngModelOptions]="{standalone: true}"></textarea>
-          <div style="display: flex; gap: 16px">
-            <button style="cursor: pointer;">
-              <label for="image" class="material-symbols-rounded"> add_a_photo </label>
-            </button>
-            <button type="submit" (click)="onSend()" style="cursor: pointer;">
-              <label class="material-symbols-rounded"> send </label>
-            </button>
-          </div> 
+                    }
+                    <textarea placeholder="Enter your message..." id="autoResizeTextarea"
+                        [(ngModel)]="currentChatItem.message" [ngModelOptions]="{standalone: true}"></textarea>
+                    <div style="display: flex; gap: 16px">
+                        <button style="cursor: pointer;">
+                            <label for="image" class="material-symbols-rounded"> add_a_photo </label>
+                        </button>
+                        <button type="submit" (click)="onSend()" style="cursor: pointer;">
+                            <label class="material-symbols-rounded"> send </label>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </form>
