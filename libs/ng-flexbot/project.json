@@ -17,12 +17,11 @@
       "executor": "@nx/eslint:lint"
     },
     "build": {
-      "executor": "@angular-devkit/build-ng-packagr:build",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "tsConfig": "libs/ng-flexbot/tsconfig.lib.json",
-        "project": "libs/ng-flexbot/ng-package.json"
-      }
+      "inputs": ["production", "^production"],
+      "outputs": ["{workspaceRoot}/dist/libs/ng-flexbot"],
+      "dependsOn": ["^build"],
+      "executor": "@nx/js:tsc",
+      "options": {}
     }
   }
 }

@@ -1,0 +1,48 @@
+@switch (message().messageType) {
+@case (messageType.BOT_MESSAGE) {
+<div class="chat response">
+    
+    <p>
+        <markdown class="variable-binding" ngPreserveWhitespaces  [data]="message().message"></markdown>
+    </p>
+</div>
+}
+@case (messageType.USER_MESSAGE) {
+<div class="chat message">
+    <img src="../../../assets/img/aguekeng.png" width="30px">
+    <p>
+        {{ message().message }}
+    </p>
+</div>
+}
+@case (messageType.ERROR_MESSAGE) {
+<div class="chat error">
+
+    <p>
+        {{ message().message }}
+    </p>
+</div>
+}
+@case (messageType.LOADING_MESSAGE) {
+<div class="chat loading">
+    
+    &nbsp;
+    &nbsp;
+    <p>
+        <span class="loader"></span>
+    </p>
+</div>
+}
+@case (messageType.USER_IMAGE_MESSAGE) {
+<div class="chat message">
+    <img src="../../../assets/img/aguekeng.png">
+    <p>
+        <img [src]="message().picture" alt="Uploaded Image">
+        <br>
+        <label>
+            {{ message().message }}
+        </label>
+    </p>
+</div>
+}
+}

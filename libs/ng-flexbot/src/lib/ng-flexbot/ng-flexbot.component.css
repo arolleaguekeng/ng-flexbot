@@ -1,0 +1,227 @@
+.body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #131314;
+  }
+  
+  .messagebar {
+    position: fixed;
+    bottom: 0;
+    height: 6rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #131314;
+    flex-direction: column;
+    
+  }
+  .messagebar p {
+    color: white;
+  }
+  
+  .bar-wrapper {
+    margin-bottom: 50px;
+  }
+  
+  .messagebar .bar-wrapper {
+    background-color: #292a31;
+    border-radius: 30px;
+    width: 50vw;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .bar-wrapper textarea {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: none;
+    color: #ccc;
+    min-height: 30px;
+    resize: vertical;
+    height: 30px;
+    max-height: 400px;
+  }
+  
+  .bar-wrapper input::placeholder {
+    color: #ccc;
+  }
+  
+  
+  .messagebar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button label{
+    cursor: pointer;
+  }
+  
+  button label:hover{
+    background: linear-gradient(16deg, #4285f4, #d96570, #4285f4);
+    background-size: 400% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateX(1%);
+  }
+  .chatbox-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .message-box {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    height: calc(100vh - 10rem);
+    overflow-y: auto;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    width: 60%;
+    padding: 20px;
+    margin-bottom: 300px;
+    animation: gradientShift 2s ease infinite;
+    position: fixed;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #131314;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+  
+    
+  }
+  nav img {
+    width: 50px;
+    height: auto;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .chat {
+      padding: 25px 10px;
+    }
+  
+    .messagebar .bar-wrapper {
+      padding: 16px;
+      margin: 16px;
+      width: 98%;
+    }
+  
+  }
+  .image-container {
+    position: relative;
+    display: inline-block; /* Or 'block' depending on your layout */
+  }
+  
+  .remove-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Additional styling for the button as needed */
+  }
+  
+  .welcome-text {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: red;
+    background: linear-gradient(16deg, #4285f4, #d96570, #4285f4);
+    background-size: 400% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 60px;
+
+    animation: gradientShift 8s ease infinite;
+  
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    height: 100vh; 
+  }
+  
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* loader */
+  .loader {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+    margin: 15px auto;
+    position: relative;
+    color: #fff;
+    box-sizing: border-box;
+    animation: animloader 1s linear infinite alternate;
+  }
+  
+  @keyframes animloader {
+    0% {
+      box-shadow: -38px -6px, -14px 6px, 14px -6px;
+    }
+    33% {
+      box-shadow: -38px 6px, -14px -6px, 14px 6px;
+    }
+    66% {
+      box-shadow: -38px -6px, -14px 6px, 14px -6px;
+    }
+    100% {
+      box-shadow: -38px 6px, -14px -6px, 14px 6px;
+    }
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .chat {
+      padding: 25px 10px;
+    }
+  
+    .messagebar .bar-wrapper {
+      padding: 16px;
+      margin: 16px;
+      width: 95%;
+    }
+    .welcome-text{
+      font-size: 30px;
+    }
+  }
+  
