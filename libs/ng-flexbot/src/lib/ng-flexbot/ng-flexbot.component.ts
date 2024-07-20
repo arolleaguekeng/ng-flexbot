@@ -1,4 +1,4 @@
-import { Component, ElementRef, input, Renderer2 } from '@angular/core';
+import { Component,  Input,  input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChatModel, MessageType } from './models/chat.model';
 import { FlexbotService } from './services/flexbot.service';
@@ -16,23 +16,30 @@ import {
   templateUrl: './ng-flexbot.component.html',
   styleUrl: './ng-flexbot.component.css',
 })
-export class NgFlexbotComponent {
-  apiKey = input<string>();
+export class NgFlexbotComponent implements OnInit {
+  @Input() apikey!: string;
   textModel =  FlexbotCurrentTextModel.GOOGLE_GEMINI_PRO
   imageModel = FlexbotCurrentImageModel.GOOGLE_GEMINI_PRO_VISION;
-  promptContext = input<string>();
+  @Input() promptContext = 'chat';
 
   constructor(
     private flexbotService: FlexbotService,
-    private renderer: Renderer2,
-    private el: ElementRef,
     private fbSharedService: FbSharedServiceService
   ) {
-    this.fbSharedService.apikey = this.apiKey.toString();
+
+  }
+  ngOnInit(): void {
+    this.fbSharedService.apikey = this.apikey;
     this.fbSharedService.flexbotCurrentTextModel = this.textModel;
     this.fbSharedService.flexbotCurrentImageModel = this.imageModel;
     this.fbSharedService.promptContext = this.promptContext.toString();
+
+    console.log('apikey', this.fbSharedService.apikey);
+    console.log('textModel', this.textModel);
+    console.log('imageModel', this.imageModel);
+    console.log('promptContext', this.promptContext); 
   }
+  
   isLoading = false;
   chatMessages: ChatModel[] = [];
   currentChatItem: ChatModel = new ChatModel(

@@ -13,10 +13,10 @@ export class GeminiServiceService {
 
   genAI = new GoogleGenerativeAI(this.fbSharedService.apikey);
   textModel = this.genAI.getGenerativeModel({
-    model: this.fbSharedService.flexbotCurrentTextModel,
+    model: this.fbSharedService.flexbotCurrentTextModel.split('/')[1],
   });
   imageModel = this.genAI.getGenerativeModel({
-    model: this.fbSharedService.flexbotCurrentImageModel,
+    model: this.fbSharedService.flexbotCurrentImageModel.split('/')[1],
   });
   /**
    * Generates text based on the given prompt.
@@ -24,6 +24,16 @@ export class GeminiServiceService {
    * @returns A Promise that resolves to the generated text.
    */
   generateText(prompt: string): Promise<any> {
+    this.genAI = new GoogleGenerativeAI(this.fbSharedService.apikey);
+    this.textModel = this.genAI.getGenerativeModel({
+      model: this.fbSharedService.flexbotCurrentTextModel.split('/')[1],
+    });
+    console.log('prompt', prompt);
+    console.log('promptContext', this.fbSharedService.promptContext);
+    console.log('textModel', this.fbSharedService.flexbotCurrentTextModel.split('/')[1]);
+    console.log('apikey', this.fbSharedService.apikey);
+    console.log('gemini', this.genAI);
+
     const test: {
       role: string;
       parts: {

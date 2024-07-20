@@ -1,5 +1,12 @@
 /* General Chat Block Styles */
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 700ms ease-in-out;
+}
+
 .chat {
   display: flex;
   flex-direction: column;
@@ -21,9 +28,19 @@
 
 }
 
+code{
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 1em;
+  color: #f8f8f2;
+  background: #282a36;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+
+}
 
 
-/* Bot Message Styles */
+
+/* Bot message styles */
 .chat.response {
   align-self: flex-start;
   color: #ffffff; /* White text */
@@ -34,6 +51,7 @@
   border-radius: 20px; /* Rounded corners */
   background-color: #007bff; /* Blue background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  gap: 8px;
 }
 .user-bulbe{
   display: flex;
@@ -41,7 +59,7 @@
   justify-content: center;
   align-items: center;
 }
-/* User Message Styles */
+/* User message styles */
 .chat.message {
   display: flex;
   flex-direction: row;
@@ -116,7 +134,7 @@
     display: block;
     margin:15px auto;
     position: relative;
-    color: #FFF;
+    color: #052f5b;
     box-sizing: border-box;
     animation: animloader 1s linear infinite alternate;
   }

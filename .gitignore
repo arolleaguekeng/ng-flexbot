@@ -42,3 +42,5 @@ Thumbs.db
 .nx/workspace-data
 
 .angular
+apps/flexbot-demo/environments/environment.ts
+apps/flexbot-demo/environments/environment.prod.ts

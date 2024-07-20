@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { NgFlexbotComponent } from '@aguekeng/ng-flexbot';
+import { environment } from '../../environments/environment';
 
 @Component({
   standalone: true,
@@ -12,4 +13,6 @@ import { NgFlexbotComponent } from '@aguekeng/ng-flexbot';
 })
 export class AppComponent {
   title = 'flexbot-demo';
+  apiKey = environment.apikey;
+  promptContext = ""
 }
