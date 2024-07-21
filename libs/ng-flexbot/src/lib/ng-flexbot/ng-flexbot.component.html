@@ -5,10 +5,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
 
 <form action="">
-    <div class="body">
+    <div class="chat-body">
         <nav>
             <img src="../assets/img/angular-gemini.png" alt="" />
-            <h1>Angular Gemini</h1>
+            <h1>Ng Flexbot</h1>
         </nav>
         <div class="chatbox-wrapper">
             <div class="message-box">
@@ -19,7 +19,7 @@
                 }
                 @else {
                     <h1 class="welcome-text">
-                        Angular Gemini UI <br> DEMO
+                        Ng Flexbot <br> Demo
                     </h1>
                 }
 
@@ -34,13 +34,15 @@
                     <input type="file" id="image" (change)="onImageSelected($event)" style="cursor: pointer;">
                     @if (imageUrl) {
                         <div class="image-container">
-                            <img [src]="imageUrl" alt="Uploaded Image" width="80px">
+                            <img [src]="imageUrl" alt="Uploaded Image" width="50px">
                             <button class="remove-button material-symbols-rounded" (click)="removeImage()">cancel</button>
                         </div>
 
                     }
-                    <textarea placeholder="Enter your message..." id="autoResizeTextarea"
-                        [(ngModel)]="currentChatItem.message" [ngModelOptions]="{standalone: true}"></textarea>
+                    <div class="textarea-container">
+                        <textarea placeholder="Enter your message..." id="autoResizeTextarea"
+                            [(ngModel)]="currentChatItem.message" [ngModelOptions]="{standalone: true}"></textarea>
+                    </div>
                     <div style="display: flex; gap: 16px">
                         <button style="cursor: pointer;">
                             <label for="image" class="material-symbols-rounded"> add_a_photo </label>

@@ -41,7 +41,8 @@ export class NgFlexbotComponent implements OnInit {
   }
   
   isLoading = false;
-  chatMessages: ChatModel[] = [];
+  chatMessages: ChatModel[] = [
+  ];
   currentChatItem: ChatModel = new ChatModel(
     '',
     new Date(),

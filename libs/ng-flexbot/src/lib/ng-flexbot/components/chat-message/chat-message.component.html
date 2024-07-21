@@ -9,7 +9,6 @@
 }
 @case (messageType.USER_MESSAGE) {
 <div class="user-bulbe">
-    <label for="image" class="material-symbols-rounded"> person </label>
     <div class="chat message">
         <p>
             {{ message().message }}
@@ -36,15 +35,16 @@
 </div>
 }
 @case (messageType.USER_IMAGE_MESSAGE) {
-<div class="chat message">
-    <img src="../../../assets/img/aguekeng.png">
-    <p>
-        <img [src]="message().picture" alt="Uploaded Image">
-        <br>
-        <label>
-            {{ message().message }}
-        </label>
-    </p>
+<div class="user-bulbe">
+    <div class="chat message">
+        <p>
+            <img [src]="message().picture" alt="Uploaded Image" width="120px">
+            <br>
+            <label>
+                {{ message().message }}
+            </label>
+        </p>
+    </div>
 </div>
 }
 }
