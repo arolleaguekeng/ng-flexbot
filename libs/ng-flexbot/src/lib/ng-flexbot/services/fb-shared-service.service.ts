@@ -11,7 +11,8 @@ export class FbSharedServiceService {
 
   isStreaming = false;
   stramingResponse: any;
-  apikey = "YOUR_API_KEY";
+  googleApikey = "YOUR_GOOGLE_API_KEY";
+  openaiApikey = "YOUR_OPEN_AI_API_KEY";
   flexbotCurrentTextModel = FlexbotCurrentTextModel.GOOGLE_GEMINI_PRO;
   flexbotCurrentImageModel = FlexbotCurrentImageModel.GOOGLE_GEMINI_PRO_VISION
   promptContext = 'tu es un developpeur senior';

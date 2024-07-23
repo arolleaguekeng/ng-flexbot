@@ -1,6 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import { FbSharedServiceService } from '../fb-shared-service.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, max, of, tap } from 'rxjs';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -13,23 +15,33 @@ export class OpenaiServiceService {
    * @returns A Promise that resolves to the generated text.
    */
   async generateText(prompt: string): Promise<any> {
+
     this.fbSharedService.chatHistory.push({
       role: 'user',
       content: prompt,
     });
 
     const body = {
-      model: this.fbSharedService.flexbotCurrentTextModel,
+      model: this.fbSharedService.flexbotCurrentTextModel.split('/')[1],
       messages: this.fbSharedService.chatHistory,
+      max_tokens: 59,
+      temperature: 0.5,
+
     };
 
+    console.log('body', body);
+    console.log('apikey', this.fbSharedService.openaiApikey);
     return this.http
       .post('https://api.openai.com/v1/chat/completions', body, {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: 'Bearer YOUR_OPENAI_API_KEY',
+          Authorization: `Bearer ${this.fbSharedService.openaiApikey}`,
         },
-      });
+      }).pipe(
+        tap((response) => this.log(response)),
+        catchError((error) => this.handleError(error, null))
+      ).toPromise()
+        ;
   }
 
   async generateTextByImage(file: File, promptText: string): Promise<any> {
@@ -90,5 +102,14 @@ export class OpenaiServiceService {
           }),
         }
       );
+  }
+
+  private log(response: any) {
+    console.table(response);
+  }
+
+  private handleError(error: Error, errorValue: any) {
+    console.error("Api error", error);
+    return of(errorValue);
   }
 }

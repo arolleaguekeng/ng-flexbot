@@ -3,7 +3,7 @@ export enum FlexbotCurrentTextModel {
   OPEN_AI_GPT3 = 'openai/gpt-3',
   OPEN_AI_GPT3_CHAT = 'openai/gpt-3-chat',
   OPEN_AI_GPT_4o_MINI = 'openai/gpt-4o-mini',
-  
+  OPEN_AI_GPT3_5_TURBO = 'openai/gpt-3.5-turbo',
 }
 
 

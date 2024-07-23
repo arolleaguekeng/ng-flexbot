@@ -11,7 +11,7 @@ export class GeminiServiceService {
 
   fbSharedService = inject(FbSharedServiceService);
 
-  genAI = new GoogleGenerativeAI(this.fbSharedService.apikey);
+  genAI = new GoogleGenerativeAI(this.fbSharedService.googleApikey);
   textModel = this.genAI.getGenerativeModel({
     model: this.fbSharedService.flexbotCurrentTextModel.split('/')[1],
   });
@@ -24,14 +24,14 @@ export class GeminiServiceService {
    * @returns A Promise that resolves to the generated text.
    */
   generateText(prompt: string): Promise<any> {
-    this.genAI = new GoogleGenerativeAI(this.fbSharedService.apikey);
+    this.genAI = new GoogleGenerativeAI(this.fbSharedService.googleApikey);
     this.textModel = this.genAI.getGenerativeModel({
       model: this.fbSharedService.flexbotCurrentTextModel.split('/')[1],
     });
     console.log('prompt', prompt);
     console.log('promptContext', this.fbSharedService.promptContext);
     console.log('textModel', this.fbSharedService.flexbotCurrentTextModel.split('/')[1]);
-    console.log('apikey', this.fbSharedService.apikey);
+    console.log('apikey', this.fbSharedService.googleApikey);
     console.log('gemini', this.genAI);
 
     const test: {
@@ -74,7 +74,7 @@ export class GeminiServiceService {
    * @returns A Promise that resolves to the generated text.
    */
   async generateTextByImage(file: File, promptText: string): Promise<any> {
-    this.genAI = new GoogleGenerativeAI(this.fbSharedService.apikey);
+    this.genAI = new GoogleGenerativeAI(this.fbSharedService.googleApikey);
     this.textModel = this.genAI.getGenerativeModel({
       model: this.fbSharedService.flexbotCurrentImageModel.split('/')[1],
     });

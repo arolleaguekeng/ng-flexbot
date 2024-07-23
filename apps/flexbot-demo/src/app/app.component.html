@@ -1,5 +1,11 @@
 <div class="chat">
-    <div class="container">
-        <lib-ng-flexbot [apikey]=apiKey promptContext="promptContext"></lib-ng-flexbot>
-    </div>
+  <div class="container">
+    <lib-ng-flexbot
+      [googleApikey]="googleApikey"
+      [openaiApikey]="openaiApikey"
+      [promptContext]="promptContext"
+      [textModel]="textModel"
+      [imageModel]="imageModel"
+    ></lib-ng-flexbot>
+  </div>
 </div>

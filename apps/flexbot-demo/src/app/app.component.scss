@@ -8,9 +8,12 @@
 }
 
 .container{
-    width: 100%;
+    position: fixed;
+    right: 1;
+    bottom: top;
+    width: 900px;
     max-width: 900px;
-    height: 100%;
+    height: 900px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

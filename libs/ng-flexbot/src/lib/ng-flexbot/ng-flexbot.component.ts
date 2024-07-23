@@ -1,4 +1,4 @@
-import { Component,  Input,  input, OnInit } from '@angular/core';
+import { Component, Input, input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChatModel, MessageType } from './models/chat.model';
 import { FlexbotService } from './services/flexbot.service';
@@ -17,32 +17,26 @@ import {
   styleUrl: './ng-flexbot.component.css',
 })
 export class NgFlexbotComponent implements OnInit {
-  @Input() apikey!: string;
-  textModel =  FlexbotCurrentTextModel.GOOGLE_GEMINI_PRO
-  imageModel = FlexbotCurrentImageModel.GOOGLE_GEMINI_PRO_VISION;
+  @Input() googleApikey!: string;
+  @Input() openaiApikey!: string;
+  @Input() textModel = FlexbotCurrentTextModel.GOOGLE_GEMINI_PRO;
+  @Input() imageModel = FlexbotCurrentImageModel.GOOGLE_GEMINI_PRO_VISION;
   @Input() promptContext = 'chat';
 
   constructor(
     private flexbotService: FlexbotService,
     private fbSharedService: FbSharedServiceService
-  ) {
-
-  }
+  ) {}
   ngOnInit(): void {
-    this.fbSharedService.apikey = this.apikey;
+    this.fbSharedService.googleApikey = this.googleApikey;
+    this.fbSharedService.openaiApikey = this.openaiApikey;
     this.fbSharedService.flexbotCurrentTextModel = this.textModel;
     this.fbSharedService.flexbotCurrentImageModel = this.imageModel;
     this.fbSharedService.promptContext = this.promptContext.toString();
-
-    console.log('apikey', this.fbSharedService.apikey);
-    console.log('textModel', this.textModel);
-    console.log('imageModel', this.imageModel);
-    console.log('promptContext', this.promptContext); 
   }
-  
+
   isLoading = false;
-  chatMessages: ChatModel[] = [
-  ];
+  chatMessages: ChatModel[] = [];
   currentChatItem: ChatModel = new ChatModel(
     '',
     new Date(),
@@ -97,15 +91,23 @@ export class NgFlexbotComponent implements OnInit {
         });
     } else if (this.fbSharedService.isStreaming == true) {
       this.addChatMessage(this.loadingChatItem);
-      this.flexbotService.generateTextStream(newCurrentChat.message).then((data) => {
-        this.addBotBull(this.fbSharedService.stramingResponse);
-      });
+      this.flexbotService
+        .generateTextStream(newCurrentChat.message)
+        .then((data) => {
+          this.addBotBull(this.fbSharedService.stramingResponse);
+        });
     } else {
       this.addChatMessage(this.loadingChatItem);
       this.flexbotService
         .generateText(newCurrentChat.message)
         .then((data) => {
-          const filterData = data.response.text();
+          let filterData = ""
+          if (this.textModel.includes('openai')) {
+            filterData = data.choices[0].message.content;
+          }
+          if (this.textModel.includes('google')) {
+            filterData = data.response.text();
+          }
           this.addBotBull(filterData);
         })
         .catch((error) => {
