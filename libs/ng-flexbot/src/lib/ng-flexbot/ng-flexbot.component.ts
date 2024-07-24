@@ -22,6 +22,8 @@ export class NgFlexbotComponent implements OnInit {
   @Input() textModel = FlexbotCurrentTextModel.GOOGLE_GEMINI_PRO;
   @Input() imageModel = FlexbotCurrentImageModel.GOOGLE_GEMINI_PRO_VISION;
   @Input() promptContext = 'chat';
+  @Input() welcomeMessage = 'Welcome to Flexbot';
+  @Input() title = 'Ng-flexbot';
 
   constructor(
     private flexbotService: FlexbotService,
@@ -101,7 +103,7 @@ export class NgFlexbotComponent implements OnInit {
       this.flexbotService
         .generateText(newCurrentChat.message)
         .then((data) => {
-          let filterData = ""
+          let filterData = '';
           if (this.textModel.includes('openai')) {
             filterData = data.choices[0].message.content;
           }

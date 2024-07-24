@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { FbSharedServiceService } from '../fb-shared-service.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, max, of, tap } from 'rxjs';
+import { catchError, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -48,22 +48,20 @@ export class OpenaiServiceService {
     const formData = new FormData();
     formData.append('file', file);
 
-    // Step 1: Upload the image
     const uploadResponse = this.http
       .post('https://api.openai.com/v1/files', formData, {
         headers: new HttpHeaders({
-          Authorization: 'Bearer YOUR_OPENAI_API_KEY',
+          Authorization: `Bearer ${this.fbSharedService.openaiApikey}`,
         }),
       });
 
-    // Assuming uploadResponse contains the URL to the uploaded image
     const imageUrl = (uploadResponse as any)['url'];
 
-    // Step 2: Use the image URL in your chat completion request
+
     this.fbSharedService.chatHistory.push({
       role: 'user',
       content: promptText,
-      image_url: imageUrl, // Assuming the API supports sending an image URL
+      image_url: imageUrl,
     });
 
     return this.http
@@ -76,7 +74,7 @@ export class OpenaiServiceService {
         {
           headers: new HttpHeaders({
             'Content-Type': 'application/json',
-            Authorization: 'Bearer YOUR_OPENAI_API_KEY',
+            Authorization: `Bearer ${this.fbSharedService.openaiApikey}`,
           }),
         }
       );
@@ -98,7 +96,7 @@ export class OpenaiServiceService {
         {
           headers: new HttpHeaders({
             'Content-Type': 'application/json',
-            Authorization: 'Bearer YOUR_OPENAI_API_KEY',
+            Authorization: `Bearer ${this.fbSharedService.openaiApikey}`,
           }),
         }
       );

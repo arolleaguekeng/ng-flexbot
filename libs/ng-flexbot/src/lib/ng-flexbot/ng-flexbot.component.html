@@ -8,7 +8,7 @@
     <div class="chat-body">
         <nav>
             <img src="../assets/img/angular-gemini.png" alt="" />
-            <h1>Ng Flexbot</h1>
+            <h1>{{ title }}</h1>
         </nav>
         <div class="chatbox-wrapper">
             <div class="message-box">
@@ -19,7 +19,7 @@
                 }
                 @else {
                     <h1 class="welcome-text">
-                        Ng Flexbot <br> Demo
+                        {{ welcomeMessage }}
                     </h1>
                 }
             </div>

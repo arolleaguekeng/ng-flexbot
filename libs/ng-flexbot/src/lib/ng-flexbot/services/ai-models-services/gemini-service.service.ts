@@ -89,7 +89,6 @@ export class GeminiServiceService {
         console.error('Image conversion to Base64 failed.');
         return;
       }
-      // Model initialisation missing for brevity
       const prompt = [
         {
           inlineData: {
@@ -112,7 +111,6 @@ export class GeminiServiceService {
   }
 
   async geminiProStreaming(promptText: string) {
-    // Model initialisation missing for brevity
     const prompt = {
       contents: [
         {

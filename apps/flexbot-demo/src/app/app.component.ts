@@ -20,4 +20,5 @@ export class AppComponent {
   promptContext = ""
   textModel = FlexbotCurrentTextModel.GOOGLE_GEMINI_PRO;
   imageModel = FlexbotCurrentImageModel.OPEN_AI_GPT_4o_MINI;
+  welcomeMessage = "Welcome to Flexbot!";
 }
