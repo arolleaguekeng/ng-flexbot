@@ -30,40 +30,44 @@ export class GeminiServiceService {
     });
     console.log('prompt', prompt);
     console.log('promptContext', this.fbSharedService.promptContext);
-    console.log('textModel', this.fbSharedService.flexbotCurrentTextModel.split('/')[1]);
+    console.log(
+      'textModel',
+      this.fbSharedService.flexbotCurrentTextModel.split('/')[1]
+    );
     console.log('apikey', this.fbSharedService.googleApikey);
     console.log('gemini', this.genAI);
 
-    const test: {
+    const chatHistory: {
       role: string;
       parts: {
         text: string;
       }[];
-    }[] = [
-      {
-        role: 'user',
-        parts: [{ text: this.fbSharedService.promptContext }],
-      },
-      {
-        role: 'model',
-        parts: [{ text: 'oui exact' }],
-      },
-    ];
+    }[] = [];
+
 
     for (const item of this.fbSharedService.chatHistory) {
-      test.push(item);
+      chatHistory.push(item);
     }
-
-    const chat = this.textModel.startChat({
-      history: test,
-      generationConfig: {
-        maxOutputTokens: 100,
-      },
+    chatHistory.push({
+      role: 'user',
+      parts: [{ text: prompt }],
     });
     this.fbSharedService.chatHistory?.push({
       role: 'user',
       parts: [{ text: prompt }],
     });
+
+    console.log('chatHIstory', chatHistory);
+
+    const chat = this.textModel.startChat({
+      history: chatHistory,
+      generationConfig: {
+        maxOutputTokens: 100,
+      },
+    });
+
+    
+    console.log('chatHIstoryText', chat);
     return chat.sendMessage(prompt);
   }
 
@@ -79,6 +83,12 @@ export class GeminiServiceService {
     this.imageModel = this.genAI.getGenerativeModel({
       model: this.fbSharedService.flexbotCurrentImageModel.split('/')[1],
     });
+        const chatHistory: {
+      role: string;
+      parts: {
+        text: string;
+      }[];
+    }[] = [];
     try {
       const imageBase64 = await this.fileConversionService.convertToBase64(
         URL.createObjectURL(file)
@@ -103,7 +113,13 @@ export class GeminiServiceService {
       ];
       const result = await this.imageModel.generateContent(prompt);
       const response = await result.response;
-      console.log(response.text());
+
+
+      this.fbSharedService.chatHistory?.push({
+        role: 'user',
+        parts: [{ text: promptText }],
+      });
+      
       return response.text();
     } catch (error) {
       console.error('Error converting file to Base64', error);
