@@ -8,7 +8,7 @@ import { FlexbotCurrentImageModel, FlexbotCurrentTextModel } from 'libs/ng-flexb
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule, NgFlexbotComponent],
+  imports: [NgFlexbotComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
