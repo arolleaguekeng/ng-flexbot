@@ -97,7 +97,7 @@ To use `ng-flexbot`, you need API keys for the selected language models. You can
   - `GOOGLE_GEMINI_PRO` (`google/gemini-pro`)
   - `GOOGLE_MEDULLA_2` (`google/medulla-2`)
 
-- **OpenAI Models**
+- **OpenAI models**
   - `OPEN_AI_GPT_3` (`openai/gpt-3`)
   - `OPEN_AI_GPT_3_CHAT` (`openai/gpt-3-chat`)
   - `OPEN_AI_GPT_4` (`openai/gpt-4`)

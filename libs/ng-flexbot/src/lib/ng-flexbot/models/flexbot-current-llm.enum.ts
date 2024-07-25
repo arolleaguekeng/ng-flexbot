@@ -15,7 +15,8 @@ export enum FlexbotCurrentTextModel {
 
 export enum FlexbotCurrentImageModel {
   // Google Models
-  GOOGLE_GEMINI_PRO_VISION = 'google/gemini-pro-vision',
+
+  GOOGLE_GEMINI_1_5_FLASH = 'google/gemini-1.5-flash',
 
   // OpenAI Models
   OPEN_AI_DALL_E_3 = 'openai/dall-e-3',

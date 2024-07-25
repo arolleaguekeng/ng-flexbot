@@ -20,7 +20,7 @@ export class NgFlexbotComponent implements OnInit {
   @Input() googleApikey!: string;
   @Input() openaiApikey!: string;
   @Input() textModel = FlexbotCurrentTextModel.GOOGLE_GEMINI_PRO;
-  @Input() imageModel = FlexbotCurrentImageModel.GOOGLE_GEMINI_PRO_VISION;
+  @Input() imageModel = FlexbotCurrentImageModel.GOOGLE_GEMINI_1_5_FLASH;
   @Input() promptContext = 'chat';
   @Input() welcomeMessage = 'Welcome to Flexbot';
   @Input() title = 'Ng-flexbot';

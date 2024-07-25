@@ -19,6 +19,6 @@ export class AppComponent {
   openaiApikey = environment.openaiApikey;
   promptContext = ""
   textModel = FlexbotCurrentTextModel.GOOGLE_GEMINI_PRO;
-  imageModel = FlexbotCurrentImageModel.OPEN_AI_GPT_4o_MINI;
+  imageModel = FlexbotCurrentImageModel.GOOGLE_GEMINI_1_5_FLASH;
   welcomeMessage = "Welcome to Flexbot!";
 }

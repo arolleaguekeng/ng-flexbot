@@ -74,11 +74,6 @@ export class GeminiServiceService {
    * @returns A Promise that resolves to the generated text.
    */
   async generateTextByImage(file: File, promptText: string): Promise<any> {
-    this.genAI = new GoogleGenerativeAI(this.fbSharedService.googleApikey);
-    this.textModel = this.genAI.getGenerativeModel({
-      model: this.fbSharedService.flexbotCurrentImageModel.split('/')[1],
-    });
-    console.log('prompt', this.fbSharedService.flexbotCurrentImageModel.split('/')[1]);
     try {
       const imageBase64 = await this.fileConversionService.convertToBase64(
         URL.createObjectURL(file)
@@ -89,6 +84,7 @@ export class GeminiServiceService {
         console.error('Image conversion to Base64 failed.');
         return;
       }
+      // Model initialisation missing for brevity
       const prompt = [
         {
           inlineData: {
