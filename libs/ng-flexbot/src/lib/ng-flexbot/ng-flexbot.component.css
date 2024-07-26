@@ -16,6 +16,7 @@
   height: 100%;
   max-width: 800px; /* Limite maximale pour les grandes tailles d'écran */
   min-width: 300px; /* Limite minimale pour les petites tailles d'écran */
+  overflow: auto;
 }
 
 form {
@@ -45,12 +46,13 @@ nav h1 {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  overflow: auto;
 }
 
 .message-box {
   flex: 1;
   padding: 10px;
-  overflow-y: auto;
+  overflow: auto;
 }
 
 .welcome-text {
@@ -68,8 +70,10 @@ nav h1 {
   bottom: 0;
   left: 50%; 
   transform: translateX(-50%);
-  width: 95%;
+  width: 100%;
   z-index: 999; 
+  max-width: 50vw;
+  background-color: #fff;
 }
 
 .bar-wrapper {
@@ -128,6 +132,9 @@ button label:hover {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  z-index: 999;
+  border: 1px solid #ccc;
 }
 
 .image-container {
@@ -148,11 +155,9 @@ button label:hover {
 .textarea-container {
   display: flex;
   flex-direction: column-reverse;
+  width: 100%;
 }
 
-#autoResizeTextarea {
-  resize: none; /* Désactive le redimensionnement par défaut */
-}
 
 .welcome-text {
   position: absolute;
