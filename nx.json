@@ -72,5 +72,13 @@
       "style": "css"
     }
   },
-  "nxCloudAccessToken": "ODAzZjk1MTYtZWM0OC00ZjEwLThmN2MtOGNkZThhODQzOWExfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "ODAzZjk1MTYtZWM0OC00ZjEwLThmN2MtOGNkZThhODQzOWExfHJlYWQtd3JpdGU=",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test"]
+      }
+    }
+  }
 }
