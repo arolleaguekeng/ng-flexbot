@@ -3,7 +3,7 @@ name: fb-ci
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
 
 permissions:
