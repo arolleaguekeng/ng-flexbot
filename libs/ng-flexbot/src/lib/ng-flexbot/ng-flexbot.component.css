@@ -17,6 +17,7 @@
   max-width: 800px; /* Limite maximale pour les grandes tailles d'écran */
   min-width: 300px; /* Limite minimale pour les petites tailles d'écran */
   overflow: auto;
+
 }
 
 form {
@@ -53,6 +54,7 @@ nav h1 {
   flex: 1;
   padding: 10px;
   overflow: auto;
+  padding-bottom: 150px;
 }
 
 .welcome-text {

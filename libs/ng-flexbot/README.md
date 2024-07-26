@@ -43,15 +43,7 @@ Here’s a quick example of how to use `ng-flexbot` in your Angular project:
 
 ```html
 <div class="container">
-  <lib-ng-flexbot
-    [googleApikey]="googleApikey"
-    [openaiApikey]="openaiApikey"
-    [promptContext]="promptContext"
-    [textModel]="textModel"
-    [imageModel]="imageModel"
-    [title]="title"
-    [welcomeMessage]="welcomeMessage"
-  ></lib-ng-flexbot>
+  <lib-ng-flexbot [googleApikey]="googleApikey" [openaiApikey]="openaiApikey" [promptContext]="promptContext" [textModel]="textModel" [imageModel]="imageModel" [title]="title" [welcomeMessage]="welcomeMessage"></lib-ng-flexbot>
 </div>
 ```
 
@@ -66,8 +58,24 @@ import { environment } from '../environments/environment';
   standalone: true,
   imports: [NgFlexbotComponent],
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template : `
+    <div class="container">
+      <lib-ng-flexbot
+        [googleApikey]="googleApikey"
+        [openaiApikey]="openaiApikey"
+        [promptContext]="promptContext"
+        [textModel]="textModel"
+        [imageModel]="imageModel"
+        [title]="title"
+        [welcomeMessage]="welcomeMessage"
+      ></lib-ng-flexbot>`
+    styles: [
+    `
+      .container {
+        height: 100vh;
+      }
+    `,
+  ],
 })
 export class AppComponent {
   title = 'flexbot-demo';
@@ -94,6 +102,7 @@ To use `ng-flexbot`, you need API keys for the selected language models. You can
 ### Text Models
 
 - **Google Models**
+
   - `GOOGLE_GEMINI_PRO` (`google/gemini-pro`)
   - `GOOGLE_MEDULLA_2` (`google/medulla-2`)
 
@@ -108,13 +117,12 @@ To use `ng-flexbot`, you need API keys for the selected language models. You can
 ### Image Models
 
 - **Google Models**
-  - `GOOGLE_GEMINI_PRO_VISION` (`google/gemini-pro-vision`)
+
+  - `GOOGLE_GEMINI_1_5_FLASH` (`google/gemini-1.5-flash`)
 
 - **OpenAI Models**
   - `OPEN_AI_DALL_E_3` (`openai/dall-e-3`)
   - `OPEN_AI_DALL_E_2` (`openai/dall-e-2`)
-
-
 
 ## Contributions
 
@@ -151,8 +159,6 @@ We welcome contributions from the community! Since `ng-flexbot` is a monorepo cr
 8. Open a pull request on GitHub.
 
 **We appreciate all contributions, big or small!**
-
-
 
 ## License
 

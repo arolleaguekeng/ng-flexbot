@@ -115,8 +115,13 @@ export class NgFlexbotComponent implements OnInit {
     this.chatMessages.push(message);
     window.scrollTo(0, 0);
   }
+  
 
   onSend() {
+    // scroll to bottom
+
+
+
     this.currentChatItem.time = new Date();
     const newCurrentChat = new ChatModel(
       this.currentChatItem.message,
