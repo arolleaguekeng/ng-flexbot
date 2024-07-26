@@ -53,7 +53,15 @@ export const appConfig: ApplicationConfig = {
 
 ```html
 <div class="container">
-  <lib-ng-flexbot [googleApikey]="googleApikey" [openaiApikey]="openaiApikey" [promptContext]="promptContext" [textModel]="textModel" [imageModel]="imageModel" [title]="title" [welcomeMessage]="welcomeMessage"></lib-ng-flexbot>
+  <lib-ng-flexbot
+   [googleApikey]="googleApikey" 
+   [openaiApikey]="openaiApikey" 
+   [promptContext]="promptContext" 
+   [textModel]="textModel" 
+   [imageModel]="imageModel" 
+   [title]="title" 
+   [welcomeMessage]="welcomeMessage"
+  />
 </div>
 ```
 
