@@ -1,5 +1,3 @@
-
-
 export class ChatModel {
   public message: string;
   public time: Date;
