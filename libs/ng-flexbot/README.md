@@ -39,6 +39,16 @@ npm install ng-flexbot
 
 Here’s a quick example of how to use `ng-flexbot` in your Angular project:
 
+write this configuration on your `app.config.ts` file
+
+```typescript
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideMarkdown } from 'ngx-markdown';
+export const appConfig: ApplicationConfig = {
+  providers: [provideHttpClient(withFetch()), provideMarkdown()],
+};
+```
+
 ### HTML
 
 ```html
