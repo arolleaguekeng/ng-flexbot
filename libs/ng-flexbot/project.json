@@ -21,7 +21,13 @@
       "outputs": ["{workspaceRoot}/dist/libs/ng-flexbot"],
       "dependsOn": ["^build"],
       "executor": "@nx/js:tsc",
-      "options": {}
+      "options": {
+        "project": "packages/ng-flexbot/package.json",
+        "outputPath": "packages/ng-flexbot/dist",
+        "main": "packages/ng-flexbot/src/index.ts",
+        "tsConfig": "packages/ng-flexbot/tsconfig.lib.json",
+        "assets": []
+      }
     }
   }
 }
