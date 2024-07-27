@@ -10,10 +10,11 @@ const content = `${process.env.ANGULAR_ENV || ''}`;
 async function createEnvironmentFiles() {
     try {
         console.log("content", content); 
-        await fs.access(dir);
+        await fs.access( process.cwd() + "/" + dir);
     } catch (err) {
         console.log(`${dir} doesn't exist, creating now`, process.cwd());
         try {
+            console.log("Creating directory", dir);
             await fs.mkdir(dir, { recursive: true });
         } catch (error) {
             console.error(`Error while creating ${dir}. Error: ${error.message}`);
