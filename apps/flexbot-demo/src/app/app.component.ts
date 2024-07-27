@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { NgFlexbotComponent } from '@aguekeng/ng-flexbot';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import {
   FlexbotCurrentImageModel,
   FlexbotCurrentTextModel,
