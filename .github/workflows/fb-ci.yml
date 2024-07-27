@@ -30,7 +30,7 @@ jobs:
       # Learn more at https://nx.dev/ci/reference/nx-cloud-cli#npx-nxcloud-startcirun
 
       - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="e2e-ci"
-      - run: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}"
+      - run: echo ${{ secrets.NPM_TOKEN }}
       # Cache node_modules
       - uses: actions/setup-node@v3
         with:
@@ -47,7 +47,6 @@ jobs:
       # Publish to npm
       - name: Publish to npm
         run: |
-          echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}"
           npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
           npm publish
         env:
