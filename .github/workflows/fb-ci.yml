@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-      - run: node server.js
+      - run: node apps/server.js
         env:
           ANGULAR_ENV: '${{ secrets.ANGULAR_ENV }}'
 
