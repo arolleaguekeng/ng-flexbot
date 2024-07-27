@@ -9,8 +9,8 @@ const content = `${process.env.ANGULAR_ENV || ''}`;
 
 async function createEnvironmentFiles() {
     try {
-        console.log("content", content); 
-        await fs.access( process.cwd() + "/" + dir);
+        console.log("content", content);
+        await fs.access(process.cwd() + "/" + dir);
     } catch (err) {
         console.log(`${dir} doesn't exist, creating now`, process.cwd());
         try {
@@ -35,6 +35,9 @@ async function createEnvironmentFiles() {
             console.log("File is created", path.resolve(filePath));
             const str = await fs.readFile(filePath, 'utf8');
             console.log(str);
+        }
+        else {
+            console.log("File is not created");
         }
     } catch (error) {
         console.error(`Error while writing files. Error: ${error.message}`);
