@@ -6,6 +6,22 @@
   "projectType": "library",
   "tags": [],
   "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/ng-flexbot/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/ng-flexbot/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/ng-flexbot/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -15,19 +31,6 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint"
-    },
-    "build": {
-      "inputs": ["production", "^production"],
-      "outputs": ["{workspaceRoot}/dist/libs/ng-flexbot"],
-      "dependsOn": ["^build"],
-      "executor": "@nx/js:tsc",
-      "options": {
-        "project": "packages/ng-flexbot/package.json",
-        "outputPath": "packages/ng-flexbot/dist",
-        "main": "packages/ng-flexbot/src/index.ts",
-        "tsConfig": "packages/ng-flexbot/tsconfig.lib.json",
-        "assets": []
-      }
     }
   }
 }

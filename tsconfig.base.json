@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@aguekeng/ng-flexbot": ["libs/ng-flexbot/src/index.ts"]
+      "@aguekeng/ng-flexbot": ["libs/ng-flexbot/src/index.ts"],
+      "ng-flexbot": ["libs/ng-flexbot/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

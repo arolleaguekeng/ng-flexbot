@@ -74,8 +74,8 @@ nav h1 {
   transform: translateX(-50%);
   width: 100%;
   z-index: 999; 
-  max-width: 50vw;
-  background-color: #fff;
+  max-width: 48vw;
+  background-color: whitesmoke;
 }
 
 .bar-wrapper {

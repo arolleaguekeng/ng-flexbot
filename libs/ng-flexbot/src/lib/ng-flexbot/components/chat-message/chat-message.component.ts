@@ -12,7 +12,7 @@ import { HighlightAuto } from 'ngx-highlightjs';
   standalone: true,
   imports: [MarkdownComponent, HighlightAuto], // Add 'markdown' component to the imports
   templateUrl: './chat-message.component.html',
-  styleUrl: './chat-message.component.scss',
+  styleUrl: './chat-message.component.css',
 })
 export class ChatMessageComponent {
   @Input() message!: ChatModel;
