@@ -3,7 +3,7 @@
   "version": "0.0.1-beta.1",
   "license": "MIT",
   "scripts": {},
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~18.1.0",
     "@angular/common": "~18.1.0",
