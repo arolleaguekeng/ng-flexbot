@@ -9,6 +9,7 @@ const content = `${process.env.ANGULAR_ENV || ''}`;
 
 async function createEnvironmentFiles() {
     try {
+        console.log("content", content); 
         await fs.access(dir);
     } catch (err) {
         console.log(`${dir} doesn't exist, creating now`, process.cwd());
