@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-const dir = "environments";
+const dir = "apps/environments";
 const file = "environment.ts";
 const prodFile = "environment.prod.ts"; // For production deployment
 
@@ -28,7 +28,7 @@ async function createEnvironmentFiles() {
         await fs.writeFile(filePath, content);
         await fs.writeFile(prodFilePath, content);
 
-        console.log("Created successfully in", process.cwd());
+        console.log("Created successfully in", process.cwd() + "/" + dir);
 
         if (await fs.access(filePath)) {
             console.log("File is created", path.resolve(filePath));
