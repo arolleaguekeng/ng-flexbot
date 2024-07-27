@@ -83,12 +83,6 @@ export class GeminiServiceService {
     this.imageModel = this.genAI.getGenerativeModel({
       model: this.fbSharedService.flexbotCurrentImageModel.split('/')[1],
     });
-        const chatHistory: {
-      role: string;
-      parts: {
-        text: string;
-      }[];
-    }[] = [];
     try {
       const imageBase64 = await this.fileConversionService.convertToBase64(
         URL.createObjectURL(file)

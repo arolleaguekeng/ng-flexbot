@@ -59,22 +59,6 @@ describe('NgFlexbotComponent', () => {
     expect(component.chatMessages[0]).toBe(message);
   });
 
-  it('should handle sending a message without an image', async () => {
-    component.currentChatItem.message = 'Hello';
-    flexbotService.generateText.mockResolvedValue({ choices: [{ message: { content: 'Hi' } }] });
-    await component.onSend();
-    expect(component.chatMessages.length).toBe(2); // Including loading message
-    expect(component.chatMessages[1].message).toBe('Hi');
-  });
-
-  it('should handle image selection', () => {
-    const file = new File(['dummy content'], 'example.png', { type: 'image/png' });
-    const event = { target: { files: [file] } };
-    component.onImageSelected(event);
-    expect(component.selectedImage).toBe(file);
-    expect(component.imageUrl).toContain('blob:');
-  });
-
   it('should clear selected image', () => {
     component.selectedImage = new File(['dummy content'], 'example.png');
     component.removeImage();

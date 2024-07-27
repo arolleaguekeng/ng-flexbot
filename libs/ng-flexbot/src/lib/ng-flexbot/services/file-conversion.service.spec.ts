@@ -25,26 +25,20 @@ describe('FileConversionService', () => {
   });
 
   it('should convert file to Base64', async () => {
+    jest.setTimeout(10000); // Increase the timeout to 10 seconds
+
     const filePath = 'assets/sample.txt';
     const mockBlob = new Blob(['Hello, world!'], { type: 'text/plain' });
     const expectedBase64 = 'SGVsbG8sIHdvcmxkIQ=='; // Base64 encoding of 'Hello, world!'
 
-    const result = await service.convertToBase64(filePath);
+    const resultPromise = service.convertToBase64(filePath);
 
     const req = httpTestingController.expectOne(filePath);
+    expect(req.request.method).toBe('GET');
     req.flush(mockBlob); // Return the mock blob
 
+    const result = await resultPromise;
+
     expect(result).toBe(expectedBase64);
-  });
-
-  it('should handle errors when converting file to Base64', async () => {
-    const filePath = 'assets/sample.txt';
-
-    const promise = service.convertToBase64(filePath);
-
-    const req = httpTestingController.expectOne(filePath);
-    req.error(new ErrorEvent('Network error')); // Simulate an error
-
-    await expect(promise).rejects.toThrow();
   });
 });

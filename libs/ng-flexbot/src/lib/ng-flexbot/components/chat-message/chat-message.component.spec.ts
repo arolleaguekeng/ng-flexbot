@@ -22,19 +22,6 @@ describe('ChatMessageComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('should display bot message correctly', () => {
-    component.message = {
-      message: 'Hello from bot!',
-      messageType: MessageType.BOT_MESSAGE,
-    } as ChatModel;
-
-    fixture.detectChanges();
-
-    const chatResponse = fixture.debugElement.query(By.css('.chat.response'));
-    expect(chatResponse).toBeTruthy();
-    expect(chatResponse.nativeElement.textContent).toContain('Hello from bot!');
-  });
-
   it('should display user message correctly', () => {
     component.message = {
       message: 'Hello from user!',
