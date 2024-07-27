@@ -1,9 +1,5 @@
 # ng-flexbot
 
-![ng-flexbot Logo](https://github.com/arolleaguekeng/ng-flexbot/blob/master/ng-flexbot-logo.png)
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![npm version](https://img.shields.io/npm/v/ng-flexbot)](https://www.npmjs.com/package/ng-flexbot)
-[![GitHub pull request check state](https://img.shields.io/github/status/s/pulls/arolleaguekeng/ng-flexbot/15)](https://github.com/arolleaguekeng/ng-flexbot/pulls)
 
 Welcome to `ng-flexbot`! 🚀
 
@@ -11,6 +7,10 @@ Welcome to `ng-flexbot`! 🚀
 
 ## Why ng-flexbot?
 
+![ng-flexbot Logo](https://github.com/arolleaguekeng/ng-flexbot/blob/master/ng-flexbot-logo.png)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![npm version](https://img.shields.io/npm/v/ng-flexbot)](https://www.npmjs.com/package/ng-flexbot)
+[![GitHub pull request check state](https://img.shields.io/github/status/s/pulls/arolleaguekeng/ng-flexbot/15)](https://github.com/arolleaguekeng/ng-flexbot/pulls)
 Are you looking for a streamlined way to integrate chatbots into your Angular applications? **ng-flexbot** simplifies this process by providing an easy-to-use UI component that integrates with popular language models. With ng-flexbot, you can:
 
 - Quickly add a chatbot to your Angular app with minimal setup.
@@ -24,7 +24,7 @@ And that’s not all! We’re continuously improving ng-flexbot and have excitin
 - **Easy Integration:** Simple setup with a few lines of code.
 - **Model Selection:** Choose from various language models, including:
   - [OpenAI GPT](https://platform.openai.com/)
-  - [Google Gemini](https://cloud.google.com/gemini)
+  - [Google Gemini](http://ai.google.dev/gemini-api)
 - **Prompt Context:** Define the subject the chatbot will focus on.
 
 ## Installation
