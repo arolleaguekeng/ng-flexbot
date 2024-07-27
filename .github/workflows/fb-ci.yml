@@ -18,12 +18,19 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - run: node server.js
+        env:
+          ANGULAR_ENV: '${{ secrets.ANGULAR_ENV }}'
 
       # This enables task distribution via Nx Cloud
       # Run this command as early as possible, before dependencies are installed
       # Learn more at https://nx.dev/ci/reference/nx-cloud-cli#npx-nxcloud-startcirun
-      - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="e2e-ci"
 
+      - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="e2e-ci"
+      - run: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}"
       # Cache node_modules
       - uses: actions/setup-node@v3
         with:
