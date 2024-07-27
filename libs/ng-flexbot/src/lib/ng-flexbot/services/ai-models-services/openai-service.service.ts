@@ -77,7 +77,7 @@ export class OpenaiServiceService {
             Authorization: `Bearer ${this.fbSharedService.openaiApikey}`,
           }),
         }
-      );
+      ).toPromise();
   }
 
   async generateTextStream(prompt: string): Promise<any> {
@@ -99,7 +99,7 @@ export class OpenaiServiceService {
             Authorization: `Bearer ${this.fbSharedService.openaiApikey}`,
           }),
         }
-      );
+      ).toPromise();
   }
 
   private log(response: any) {

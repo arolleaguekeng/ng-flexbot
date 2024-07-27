@@ -39,63 +39,7 @@ export class NgFlexbotComponent implements OnInit {
 
   isLoading = false;
   chatMessages: ChatModel[] = [
-    new ChatModel(
-      this.welcomeMessage,
-      new Date(),
-      '',
-      MessageType.BOT_MESSAGE
-    ),
-
-    new ChatModel(
-      'I am Flexbot, a language model that can generate text based on the input you provide. You can ask me questions, tell me stories, or even ask me to generate text based on an image. How can I help you today?',
-      new Date(),
-      '',
-      MessageType.USER_MESSAGE
-    ),
-    new ChatModel(
-      'You can also ask me to generate text based on a video. Just provide me with a YouTube link and ask me a question or tell me what you want me to generate text about.',
-      new Date(),
-      '',
-      MessageType.BOT_MESSAGE
-    ),
-    new ChatModel(
-      'You can also ask me to generate text based on a video. Just provide me with a YouTube link and ask me a question or tell me what you want me to generate text about.',
-      new Date(),
-      '',
-      MessageType.USER_MESSAGE
-    ),
-
-    new ChatModel(
-      'You can also ask me to generate text based on a video. Just provide me with a YouTube link and ask me a question or tell me what you want me to generate text about.',
-      new Date(),
-      '',
-      MessageType.BOT_MESSAGE
-    ),
-    new ChatModel(
-      'You can also ask me to generate text based on a video. Just provide me with a YouTube link and ask me a question or tell me what you want me to generate text about.',
-      new Date(),
-      '',
-      MessageType.USER_MESSAGE
-    ),
-
-    new ChatModel(
-      'You can also ask me to generate text based on a video. Just provide me with a YouTube link and ask me a question or tell me what you want me to generate text about.',
-      new Date(),
-      '',
-      MessageType.BOT_MESSAGE
-    ),
-    new ChatModel(
-      'You can also ask me to generate text based on a video. Just provide me with a YouTube link and ask me a question or tell me what you want me to generate text about.',
-      new Date(),
-      '',
-      MessageType.USER_MESSAGE
-    ),
-    new ChatModel(
-      'You can also ask me to generate text based on a video. Just provide me with a YouTube link and ask me a question or tell me what you want me to generate text about.',
-      new Date(),
-      '',
-      MessageType.BOT_MESSAGE
-    ),
+    
   ];
   currentChatItem: ChatModel = new ChatModel(
     '',
@@ -113,7 +57,6 @@ export class NgFlexbotComponent implements OnInit {
 
   addChatMessage(message: ChatModel) {
     this.chatMessages.push(message);
-    window.scrollTo(0, 0);
   }
   
 
@@ -217,6 +160,5 @@ export class NgFlexbotComponent implements OnInit {
     });
     this.removeImage();
     this.currentChatItem.message = '';
-    window.scrollTo(0, 0);
   }
 }

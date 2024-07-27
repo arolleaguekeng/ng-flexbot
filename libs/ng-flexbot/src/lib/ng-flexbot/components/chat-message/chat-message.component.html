@@ -1,9 +1,9 @@
-@switch (message().messageType) {
+@switch (message.messageType) {
 @case (messageType.BOT_MESSAGE) {
 <div class="chat response">
     
     <p>
-        <markdown class="variable-binding" ngPreserveWhitespaces  [data]="message().message"></markdown>
+        <markdown class="variable-binding" ngPreserveWhitespaces  [data]="message.message"></markdown>
     </p>
 </div>
 }
@@ -11,7 +11,7 @@
 <div class="user-bulbe">
     <div class="chat message">
         <p>
-            {{ message().message }}
+            {{ message.message }}
         </p>
     </div>
 </div>
@@ -20,7 +20,7 @@
 <div class="chat error">
 
     <p>
-        {{ message().message }}
+        {{ message.message }}
     </p>
 </div>
 }
@@ -38,10 +38,10 @@
 <div class="user-bulbe">
     <div class="chat message">
         <p>
-            <img [src]="message().picture" alt="Uploaded Image" width="120px">
+            <img [src]="message.picture" alt="Uploaded Image" width="120px">
             <br>
             <label>
-                {{ message().message }}
+                {{ message.message }}
             </label>
         </p>
     </div>

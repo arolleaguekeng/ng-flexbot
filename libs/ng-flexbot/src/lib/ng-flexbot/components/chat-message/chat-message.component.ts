@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { ChatModel, MessageType } from '../../models/chat.model';
 import { MarkdownComponent } from 'ngx-markdown';
 import 'prismjs';
@@ -15,6 +15,6 @@ import { HighlightAuto } from 'ngx-highlightjs';
   styleUrl: './chat-message.component.scss',
 })
 export class ChatMessageComponent {
-  message = input.required<ChatModel>();
+  @Input() message!: ChatModel;
   messageType = MessageType;
 }
