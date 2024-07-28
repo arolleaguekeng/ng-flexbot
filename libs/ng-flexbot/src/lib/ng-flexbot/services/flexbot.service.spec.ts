@@ -3,7 +3,10 @@ import { FlexbotService } from './flexbot.service';
 import { OpenaiServiceService } from './ai-models-services/openai-service.service';
 import { GeminiServiceService } from './ai-models-services/gemini-service.service';
 import { FbSharedServiceService } from './fb-shared-service.service';
-import { FlexbotCurrentImageModel, FlexbotCurrentTextModel } from '../models/flexbot-current-llm.enum';
+import {
+  FlexbotCurrentImageModel,
+  FlexbotCurrentTextModel,
+} from '../models/flexbot-current-llm.enum';
 
 describe('FlexbotService', () => {
   let service: FlexbotService;
@@ -54,13 +57,14 @@ describe('FlexbotService', () => {
     (openaiService.generateText as jest.Mock).mockResolvedValue(response);
 
     const result = await service.generateText(prompt);
-    
+
     expect(openaiService.generateText).toHaveBeenCalledWith(prompt);
     expect(result).toBe(response);
   });
 
   it('should generate text using Gemini', async () => {
-    fbSharedService.flexbotCurrentTextModel = FlexbotCurrentTextModel.GOOGLE_GEMINI_PRO;
+    fbSharedService.flexbotCurrentTextModel =
+      FlexbotCurrentTextModel.GOOGLE_GEMINI_PRO;
     const prompt = 'Hello, world!';
     const response = 'Generated text';
     (geminiService.generateText as jest.Mock).mockResolvedValue(response);
@@ -84,15 +88,21 @@ describe('FlexbotService', () => {
   // });
 
   it('should return a promise that resolves to generated text by image from Gemini', async () => {
-    fbSharedService.flexbotCurrentImageModel = FlexbotCurrentImageModel.GOOGLE_GEMINI_1_5_FLASH;
+    fbSharedService.flexbotCurrentImageModel =
+      FlexbotCurrentImageModel.GOOGLE_GEMINI_1_5_FLASH;
     const file = new File([], 'image.png');
     const promptText = 'Describe the image';
     const response = 'Generated text from image';
-    (geminiService.generateTextByImage as jest.Mock).mockResolvedValue(response);
+    (geminiService.generateTextByImage as jest.Mock).mockResolvedValue(
+      response
+    );
 
     const result = await service.generateTextByImage(file, promptText);
 
-    expect(geminiService.generateTextByImage).toHaveBeenCalledWith(file, promptText);
+    expect(geminiService.generateTextByImage).toHaveBeenCalledWith(
+      file,
+      promptText
+    );
     expect(result).toBe(response);
   });
 
@@ -108,7 +118,8 @@ describe('FlexbotService', () => {
   });
 
   it('should generate text stream using Gemini', async () => {
-    fbSharedService.flexbotCurrentTextModel = FlexbotCurrentTextModel.GOOGLE_GEMINI_PRO;
+    fbSharedService.flexbotCurrentTextModel =
+      FlexbotCurrentTextModel.GOOGLE_GEMINI_PRO;
     const prompt = 'Hello, world!';
     const response = 'Streaming text';
     (geminiService.geminiProStreaming as jest.Mock).mockResolvedValue(response);

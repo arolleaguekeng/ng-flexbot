@@ -38,9 +38,7 @@ export class NgFlexbotComponent implements OnInit {
   }
 
   isLoading = false;
-  chatMessages: ChatModel[] = [
-    
-  ];
+  chatMessages: ChatModel[] = [];
   currentChatItem: ChatModel = new ChatModel(
     '',
     new Date(),
@@ -58,12 +56,9 @@ export class NgFlexbotComponent implements OnInit {
   addChatMessage(message: ChatModel) {
     this.chatMessages.push(message);
   }
-  
 
   onSend() {
     // scroll to bottom
-
-
 
     this.currentChatItem.time = new Date();
     const newCurrentChat = new ChatModel(

@@ -53,7 +53,12 @@ describe('NgFlexbotComponent', () => {
   });
 
   it('should add a chat message', () => {
-    const message = new ChatModel('Hello', new Date(), '', MessageType.USER_MESSAGE);
+    const message = new ChatModel(
+      'Hello',
+      new Date(),
+      '',
+      MessageType.USER_MESSAGE
+    );
     component.addChatMessage(message);
     expect(component.chatMessages.length).toBe(1);
     expect(component.chatMessages[0]).toBe(message);
