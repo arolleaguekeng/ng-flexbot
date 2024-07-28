@@ -36,11 +36,10 @@ jobs:
 
       - run: npm ci
       - uses: nrwl/nx-set-shas@v4
-
       # Run lint, test, and build tasks for ng-flexbot library
-      - run: export NX_DAEMON=false; npx nx run ng-flexbot:lint
-      - run: export NX_DAEMON=false; npx nx run ng-flexbot:test
-      - run: export NX_DAEMON=false; npx nx run ng-flexbot:build
+      - run: npx nx affected -t  run ng-flexbot:lint
+      - run: npx nx affected -t  run ng-flexbot:test
+      - run: npx nx affected -t  run ng-flexbot:build
 
       # Publish ng-flexbot to npm
       - name: Publish ng-flexbot to npm
@@ -49,4 +48,4 @@ jobs:
           npm publish dist/libs/ng-flexbot
 
       # Run end-to-end tests
-      - run: npx nx run ng-flexbot:e2e
+      - run: npx nx affected --parallel 1 -t e2e-ci
