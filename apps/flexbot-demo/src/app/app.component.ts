@@ -1,18 +1,14 @@
 import { Component } from '@angular/core';
 import { NgFlexbotComponent } from '@aguekeng/ng-flexbot';
-import { environment } from '../../../environments/environment';
-import {
-  FlexbotCurrentImageModel,
-  FlexbotCurrentTextModel,
-} from 'libs/ng-flexbot/src/lib/ng-flexbot/models/flexbot-current-llm.enum';
-
+import { FlexbotCurrentImageModel, FlexbotCurrentTextModel } from '@ng-flexbot/ng-flexbot/models/flexbot-current-llm.enum';
+import { environment } from '../environments/environment';
 @Component({
   standalone: true,
-  imports: [NgFlexbotComponent],
+  imports: [NgFlexbotComponent], 
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  styles: [
+  styleUrl: './app.component.scss', 
+  styles: [ 
     `
       .container {
         height: 100vh;
