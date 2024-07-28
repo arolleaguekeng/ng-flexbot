@@ -17,9 +17,8 @@
     "paths": {
       "@aguekeng/ng-flexbot": ["libs/ng-flexbot/src/index.ts"],
       "@env/*": ["apps/flexbot-demo/src/environments/*"],
-      "ng-flexbot": ["libs/ng-flexbot/src/index.ts"],
       "@ng-flexbot/*": ["libs/ng-flexbot/src/lib/*"],
-
+      "ng-flexbot": ["libs/ng-flexbot/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
