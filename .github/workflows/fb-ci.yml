@@ -38,9 +38,9 @@ jobs:
       - uses: nrwl/nx-set-shas@v4
 
       # Run lint, test, and build tasks for ng-flexbot library
-      - run: npx nx run ng-flexbot:lint
-      - run: npx nx run ng-flexbot:test
-      - run: npx nx run ng-flexbot:build
+      - run: export NX_DAEMON=false; npx nx run ng-flexbot:lint
+      - run: export NX_DAEMON=false; npx nx run ng-flexbot:test
+      - run: export NX_DAEMON=false; npx nx run ng-flexbot:build
 
       # Publish ng-flexbot to npm
       - name: Publish ng-flexbot to npm
