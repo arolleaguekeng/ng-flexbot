@@ -1,5 +1,14 @@
 {
   "name": "ng-flexbot",
-  "version": "0.0.2-beta.1",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^18.1.0",
+    "@angular/core": "^18.1.0",
+    "ngx-highlightjs": "^11.0.1",
+    "ngx-markdown": "^18.0.0",
+    "rxjs": "~7.8.0",
+    "@google/generative-ai": "^0.8.0",
+    "@angular/forms": "~18.1.0"
+  },
   "sideEffects": false
 }
