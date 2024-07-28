@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { environment } from '../environments/environment';
 import { FlexbotCurrentImageModel, FlexbotCurrentTextModel } from '@ng-flexbot/ng-flexbot/models/flexbot-current-llm.enum';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { environment } from '@env/environment';
 
 describe('AppComponent', () => {
   let component: AppComponent;

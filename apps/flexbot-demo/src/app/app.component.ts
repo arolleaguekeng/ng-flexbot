@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgFlexbotComponent } from '@aguekeng/ng-flexbot';
 import { FlexbotCurrentImageModel, FlexbotCurrentTextModel } from '@ng-flexbot/ng-flexbot/models/flexbot-current-llm.enum';
-import { environment } from '../environments/environment';
+import { environment } from '@env/environment';
 @Component({
   standalone: true,
   imports: [NgFlexbotComponent], 
