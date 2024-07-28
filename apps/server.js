@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-const dir = "apps/environments";
+const dir = "apps/flexbot-demo/src/environments";
 const file = "environment.ts";
 const prodFile = "environment.prod.ts"; // For production deployment
 
