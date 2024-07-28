@@ -1,4 +1,4 @@
-import { Component, Input, input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChatModel, MessageType } from './models/chat.model';
 import { FlexbotService } from './services/flexbot.service';
@@ -69,7 +69,7 @@ export class NgFlexbotComponent implements OnInit {
     const newCurrentChat = new ChatModel(
       this.currentChatItem.message,
       new Date(),
-      this.selectedImage != null ? this.imageUrl! : '',
+      this.selectedImage != null ? this.imageUrl : '',
       this.selectedImage != null
         ? MessageType.USER_IMAGE_MESSAGE
         : MessageType.USER_MESSAGE
@@ -102,6 +102,7 @@ export class NgFlexbotComponent implements OnInit {
       this.flexbotService
         .generateTextStream(newCurrentChat.message)
         .then((data) => {
+          console.log(data);
           this.addBotBull(this.fbSharedService.stramingResponse);
         });
     } else {

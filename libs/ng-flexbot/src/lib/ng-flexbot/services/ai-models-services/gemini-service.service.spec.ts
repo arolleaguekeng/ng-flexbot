@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { GeminiServiceService } from './gemini-service.service';
 import { FileConversionService } from '../file-conversion.service';
 import { FbSharedServiceService } from '../fb-shared-service.service';
-import { GenerativeModel, GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { HttpClient } from '@angular/common/http';
 import {
   FlexbotCurrentImageModel,
