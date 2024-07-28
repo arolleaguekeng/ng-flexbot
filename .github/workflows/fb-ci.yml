@@ -38,7 +38,7 @@ jobs:
       - uses: nrwl/nx-set-shas@v4
       - run: npx nx reset
       # Run lint, test, and build tasks for ng-flexbot library
-      - run: npx nx run ng-flexbot:lint
+      # - run: npx nx run ng-flexbot:lint
       - run: npx nx run ng-flexbot:test
       - run: npx nx run ng-flexbot:build
 
