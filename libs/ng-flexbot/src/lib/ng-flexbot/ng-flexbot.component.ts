@@ -69,7 +69,7 @@ export class NgFlexbotComponent implements OnInit {
     const newCurrentChat = new ChatModel(
       this.currentChatItem.message,
       new Date(),
-      this.selectedImage != null ? this.imageUrl : '',
+      this.selectedImage != null ? this.imageUrl! : '',
       this.selectedImage != null
         ? MessageType.USER_IMAGE_MESSAGE
         : MessageType.USER_MESSAGE
