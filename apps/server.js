@@ -1,11 +1,11 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-const dir = "/home/workflows/workspace/apps/flexbot-demo/src/environments";
+const dir = path.join(__dirname, 'flexbot-demo/src/environments'); // Change to a directory with write access
 const file = "environment.ts";
 const prodFile = "environment.prod.ts"; // For production deployment
 
-const content = `${process.env.ANGULAR_ENV || ''}`;
+const content = `hello`;
 
 async function createEnvironmentFiles() {
     try {
