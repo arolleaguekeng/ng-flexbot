@@ -7,7 +7,7 @@ Welcome to `ng-flexbot`! 🚀
 
 ## Why ng-flexbot?
 
-![ng-flexbot Logo](https://github.com/arolleaguekeng/ng-flexbot/blob/master/ng-flexbot-logo.png)
+![ng-flexbot Logo](https://github.com/arolleaguekeng/ng-flexbot/blob/main/ng-flexbot-logo.png)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![npm version](https://img.shields.io/npm/v/ng-flexbot)](https://www.npmjs.com/package/ng-flexbot)
 [![GitHub pull request check state](https://img.shields.io/github/status/s/pulls/arolleaguekeng/ng-flexbot/15)](https://github.com/arolleaguekeng/ng-flexbot/pulls)
@@ -169,7 +169,7 @@ We welcome contributions from the community! Since `ng-flexbot` is a monorepo cr
 
 ## License
 
-This project is licensed under the MIT License. For more details, see the [LICENSE.md](https://github.com/arolleaguekeng/ng-flexbot/blob/master/LICENSE.md) file or visit the [MIT License Website](https://choosealicense.com/licenses/mit/).
+This project is licensed under the MIT License. For more details, see the [LICENSE.md](https://github.com/arolleaguekeng/ng-flexbot/blob/main/LICENSE.md) file or visit the [MIT License Website](https://choosealicense.com/licenses/mit/).
 
 ## Feedback
 
