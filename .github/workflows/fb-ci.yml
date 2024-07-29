@@ -39,7 +39,7 @@ jobs:
 
       # Run lint, test, and build tasks
       - run: npx nx affected -t lint test
-      - run: npx nx affected -t build
+      - run: npx nx run ng-flexbot:build  affected
 
       # Publish to npm
       - name: Publish to npm
