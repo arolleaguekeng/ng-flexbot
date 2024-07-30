@@ -69,8 +69,8 @@ export const appConfig: ApplicationConfig = {
 
 ```typescript
 import { Component } from '@angular/core';
-import { FlexbotCurrentTextModel, FlexbotCurrentImageModel } from 'ng-flexbot';
-import { environment } from '../environments/environment';
+import { FlexbotCurrentImageModel, FlexbotCurrentTextModel } from '@ng-flexbot/ng-flexbot/models/flexbot-current-llm.enum';
+
 
 @Component({
   standalone: true,
@@ -86,8 +86,8 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent {
   title = 'flexbot-demo';
-  googleApikey = environment.googleApiKey;
-  openaiApikey = environment.openaiApiKey;
+  googleApikey = "[YOUR_GOOGLE_API_KEY]";
+  openaiApikey = "[YOUR_OPENAI_API_KEY]";
   promptContext = "you only know questions about Angular"
   textModel = FlexbotCurrentTextModel.GOOGLE_GEMINI_PRO;
   imageModel = FlexbotCurrentImageModel.OPEN_AI_GPT_4o_MINI;
