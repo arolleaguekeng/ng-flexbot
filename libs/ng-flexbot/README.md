@@ -69,6 +69,7 @@ export const appConfig: ApplicationConfig = {
 
 ```typescript
 import { Component } from '@angular/core';
+import { NgFlexbotComponent } from 'ng-flexbot';
 import { FlexbotCurrentImageModel, FlexbotCurrentTextModel } from '@ng-flexbot/ng-flexbot/models/flexbot-current-llm.enum';
 
 

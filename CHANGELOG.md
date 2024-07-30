@@ -8,3 +8,6 @@
 
 ## [0.0.1-beta.5] - 2023-10-07
 - Update README, update code exemple, remove env on code
+
+## [0.0.1-beta.6] - 2023-10-07
+- Update README, add imports

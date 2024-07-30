@@ -6,7 +6,7 @@ import { NgFlexbotComponent } from 'ng-flexbot';
 import { FlexbotCurrentImageModel, FlexbotCurrentTextModel } from 'ng-flexbot/lib/ng-flexbot/models/flexbot-current-llm.enum';
 
 describe('AppComponent', () => {
-  let component: AppComponent;
+  let component: AppComponent; 
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
