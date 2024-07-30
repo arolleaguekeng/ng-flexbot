@@ -10,4 +10,4 @@
 - Update README, update code exemple, remove env on code
 
 ## [0.0.1-beta.6] - 2023-10-07
-- Update README, add imports
+- Update README, add imports ng-flex-bot
